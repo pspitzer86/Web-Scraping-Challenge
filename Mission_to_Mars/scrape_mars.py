@@ -31,10 +31,12 @@ def scrape():
     
     latest_news = clam_chowder(browser, news_url, 'div', 'content_title', True)
     mars_d['news_title'] = latest_news[1].text
+
     
 
     latest_teaser = clam_chowder(browser, news_url, 'div', 'article_teaser_body', True)
     mars_d['news_p'] = latest_teaser[0].text
+
 
 
     image_url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
@@ -71,9 +73,8 @@ def scrape():
     for url in hemi_url_list:
 
         hemi_soup = clam_chowder(browser, url, 'img', 'wide-image', False)
-    
-    hemi_images.append(base_url + hemi_soup['src'])
-    
+        hemi_images.append(base_url + hemi_soup['src'])
+
 
     hemisphere_image_urls = []
 
@@ -83,17 +84,17 @@ def scrape():
     mars_d['hemisphere_image_urls'] = hemisphere_image_urls
 
 
+
     fact_url = 'https://space-facts.com/mars/'
     tables = pd.read_html(fact_url)
     fact_df = tables[0]
-    fact_df
 
 
     mars_fact_df = fact_df.rename(columns = {0 : 'Aspect', 1 : 'Measurement'})
-    mars_fact_df
 
 
     mars_table_str = mars_fact_df.to_html()
     mars_d['mars_table_str'] = mars_table_str
+
 
     return mars_d
