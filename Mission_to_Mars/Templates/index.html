@@ -34,9 +34,19 @@ In collaboration with Kate Spitzer
     </div>
 </div>
 
+<h1 class='text-lg-left'>Latest News For Mars</h1>
+<h3>{{mars.news_title}}</h3>
+<p>{{mars.news_p}}</p>
 
 
+<div class='col-md-8'>
+  <h1 class='text-lg-left'>Featured Image of Mars</h1>
+    <img src='{{mars.featured_image_url}}' alt='feature_mars'>
+</div>
 
+<div>
+  {{mars.mars_table_str | safe}} 
+</div>
 
 
 
