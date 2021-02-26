@@ -38,16 +38,20 @@ In collaboration with Kate Spitzer
 <h3>{{mars.news_title}}</h3>
 <p>{{mars.news_p}}</p>
 
-
-<div class='col-md-8'>
-  <h1 class='text-lg-left'>Featured Image of Mars</h1>
-    <img src='{{mars.featured_image_url}}' alt='feature_mars'>
+<div class='container'>
+  <div class='row'>
+    <div class='col-7'>
+      <h1 class='text-lg-left'>Featured Image of Mars</h1>
+        <img src='{{mars.featured_image_url}}' alt='feature_mars'>
+    </div>
+    <div class='col-5'>
+      <h1 class='text-lg-left'>Mars Data</h1>
+       <div class='table"'>
+          {{mars.mars_table_string | safe}}
+       </div>
+    </div>
+  </div>
 </div>
-
-<div>
-  {{mars.mars_table_str | safe}} 
-</div>
-
 
 
 
