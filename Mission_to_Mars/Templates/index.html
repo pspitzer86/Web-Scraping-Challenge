@@ -38,17 +38,17 @@ In collaboration with Kate Spitzer
 <h3>{{mars.news_title}}</h3>
 <p>{{mars.news_p}}</p>
 
-<div class='container'>
+<div class='container-fluid'>
   <div class='row'>
-    <div class='col-7'>
+    <div class='col-sm-12 col-md-6'>
       <h1 class='text-lg-left'>Featured Image of Mars</h1>
-        <img src='{{mars.featured_image_url}}' alt='feature_mars'>
+        <img style='height: 380px; width: 100%;' src='{{mars.featured_image_url}}' alt='feature_mars'>
     </div>
-    <div class='col-5'>
+    <div class='col-sm-12 col-md-6'>
       <h1 class='text-lg-left'>Mars Data</h1>
-       <div class='table"'>
+       <div class=' table-striped' style='height: 200px; width: 100%;'>
           {{mars.mars_fact_table | safe}}
-       </div>
+        </div>
     </div>
   </div>
 </div>
@@ -57,37 +57,37 @@ In collaboration with Kate Spitzer
 <div class='container'>
   <h1 class='text-lg-center'>Hemispheres of Mars</h1>
   <div class='row'>
-    <div class='col-6'>
-      <div class="card" style="width: 18rem;">
-        <img src="{{mars.hemisphere_image_urls[0].img_url}}" class="card-img-top" alt="cerberus_hemi">
+    <div class='col-sm-12 col-md-6'>
+      <div class="card margins">
+        <img src="{{mars.hemisphere_image_urls[0].img_url}}" class="card-img-top responsive" alt="cerberus_hemi">
         <div class="card-body">
-          <p class="card-text">{{mars.hemisphere_image_urls[0].title}}.</p>
+          <p class="card-text" style='font-weight: bold; font-size: 30px;'>{{mars.hemisphere_image_urls[0].title}}</p>
        </div>
       </div>
    </div>
-   <div class='col-6'>
-    <div class="card" style="width: 18rem;">
-      <img src="{{mars.hemisphere_image_urls[1].img_url}}" class="card-img-top" alt="schiparelli_hemi">
+   <div class='col-sm-12 col-md-6'>
+    <div class="card margins">
+      <img src="{{mars.hemisphere_image_urls[1].img_url}}" class="card-img-top responsive" alt="schiaparelli_hemi">
       <div class="card-body">
-        <p class="card-text">{{mars.hemisphere_image_urls[1].title}}.</p>
+        <p class="card-text" style='font-weight: bold; font-size: 30px;'>{{mars.hemisphere_image_urls[1].title}}</p>
      </div>
     </div>
  </div>
 </div>
 <div class='row'>
-  <div class='col-6'>
-    <div class="card" style="width: 18rem;">
-      <img src="{{mars.hemisphere_image_urls[2].img_url}}" class="card-img-top" alt="syrtis_major_hemi">
+  <div class='col-sm-12 col-md-6'>
+    <div class="card margins">
+      <img src="{{mars.hemisphere_image_urls[2].img_url}}" class="card-img-top responsive" alt="syrtis_major_hemi">
       <div class="card-body">
-        <p class="card-text">{{mars.hemisphere_image_urls[2].title}}.</p>
+        <p class="card-text" style='font-weight: bold; font-size: 30px;'>{{mars.hemisphere_image_urls[2].title}}</p>
      </div>
     </div>
  </div>
- <div class='col-6'>
-  <div class="card" style="width: 18rem;">
-    <img src="{{mars.hemisphere_image_urls[3].img_url}}" class="card-img-top" alt="valles_marineris_hemi">
+ <div class='col-sm-12 col-md-6'>
+  <div class="card margins">
+    <img src="{{mars.hemisphere_image_urls[3].img_url}}" class="card-img-top responsive" alt="valles_marineris_hemi">
     <div class="card-body">
-      <p class="card-text">{{mars.hemisphere_image_urls[3].title}}.</p>
+      <p class="card-text" style='font-weight: bold; font-size: 30px;'>{{mars.hemisphere_image_urls[3].title}}</p>
    </div>
   </div>
 </div>
