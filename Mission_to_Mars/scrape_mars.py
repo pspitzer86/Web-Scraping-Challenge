@@ -1,13 +1,18 @@
+# Import Dependencies
+
 from webdriver_manager.chrome import ChromeDriverManager
 from splinter import Browser
 from bs4 import BeautifulSoup
 import pandas as pd
 
+# Defined function setting up Splinter
+
 def init_browser():
-    # @NOTE: Replace the path with your actual path to the chromedriver
     executable_path = {'executable_path' : ChromeDriverManager().install()}
     return Browser('chrome', **executable_path, headless=False)
 
+# Function to visit the url for each website, parse the htmls made of each site and setting variables for the tag and class needed for each scrape
+# All but the hemisphere website uses find_all() method, setting an if statement to look for which between find_all() and find() to use.
 
 def clam_chowder(browser, url, tag, class_name, find_all):
     browser.visit(url)
@@ -20,6 +25,8 @@ def clam_chowder(browser, url, tag, class_name, find_all):
     else: 
         return soup.find(tag, {'class' : class_name})
 
+
+# Defined scrape function using clam_chowder function to scrape all needed features and create a dictionary from them.  Altered jupyter notebook.
     
 def scrape():
 
@@ -32,7 +39,6 @@ def scrape():
     latest_news = clam_chowder(browser, news_url, 'div', 'content_title', True)
     mars_d['news_title'] = latest_news[1].text
 
-    
 
     latest_teaser = clam_chowder(browser, news_url, 'div', 'article_teaser_body', True)
     mars_d['news_p'] = latest_teaser[0].text
