@@ -91,10 +91,10 @@ def scrape():
 
 
     mars_fact_df = fact_df.rename(columns = {0 : 'Aspect', 1 : 'Measurement'})
-    mars_fact_df.reset_index(drop=True, inplace=True)
 
-    mars_table_str = mars_fact_df.to_html()
+    mars_table_str = mars_fact_df.to_html(index=False)
     mars_table_string = mars_table_str.replace('text-align: right;', 'text-align: left;')
 
+    mars_d['mars_fact_table'] = mars_table_string
 
     return mars_d
